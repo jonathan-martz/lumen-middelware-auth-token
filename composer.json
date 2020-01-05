@@ -1,0 +1,23 @@
+{
+  "name": "jonathan-martz/lumen-middelware-auth-token",
+  "license": "MIT",
+  "description": "Php Lumen Middelware Auth token",
+  "require": {
+    "php": "^7.3|^7.4",
+    "laravel/lumen-framework": "^6.3",
+    "jonathan-martz/lumen-controller": "^0.3"
+  },
+  "autoload": {
+    "classmap": [
+      "middelware/"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Jonathan Martz",
+      "email": "composer@jmartz.de",
+      "homepage": "https://www.jmartz.de",
+      "role": "Developer"
+    }
+  ]
+}
