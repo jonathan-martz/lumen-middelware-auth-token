@@ -17,6 +17,7 @@ class CreateTopicTokenTable extends Migration
             $table->increments('id');
             $table->integer('userid');
             $table->longText('token');
+            $table->string('topic');
             $table->timestamp('created_at')->useCurrent();
         });
     }

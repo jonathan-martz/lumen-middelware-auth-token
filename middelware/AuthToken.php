@@ -26,26 +26,13 @@ class AuthToken extends Controller
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        $validator = Validator::make($request->all(), [
-            'auth.userid' => 'required|integer',
-            'auth.token' => 'required|size:512'
-        ])->validate();
+        $validator = Validator::make($request->all(), [])->validate();
 
-        $check = DB::table('topic_tokens')
-            ->where('userid', '=', $this->request->input('auth.userid'))
-            ->where('token', '=', $this->request->input('auth.token'));
+        $user = $this->request->user();
 
-        if($check->count() === 1) {
-            $user = DB::table('users')->where('id', '=', $this->request->input('auth.userid'));
-
-            $user = new User($user->first());
-
-            var_dump($user->getAuthIdentifier());
-
-            // return $next($request);
+        if($user) {
+            return $next($request);
         }
-
-        $this->addResult('test', 'konalo');
 
         return $this->getResponse();
     }
