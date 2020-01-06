@@ -5,11 +5,14 @@
   "require": {
     "php": "^7.3|^7.4",
     "laravel/lumen-framework": "^6.3",
-    "jonathan-martz/lumen-controller": "^0.3"
+    "jonathan-martz/lumen-controller": "^0.3",
+    "jonathan-martz/lumen-model-user": "^0.1",
+    "jonathan-martz/lumen-controller-login": "^0.4"
   },
   "autoload": {
     "classmap": [
-      "middelware/"
+      "middelware/",
+      "provider/"
     ]
   },
   "authors": [
@@ -19,5 +22,12 @@
       "homepage": "https://www.jmartz.de",
       "role": "Developer"
     }
-  ]
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "App\\Providers\\AuthTokenProvider"
+      ]
+    }
+  }
 }
