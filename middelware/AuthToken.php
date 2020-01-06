@@ -30,6 +30,9 @@ class AuthToken extends Controller
         ])->validate();
 
         if(false) {
+            // @todo add logic , with table, controller to crud and so on
+            // DB::table('');
+
             return $next($request);
         }
 
